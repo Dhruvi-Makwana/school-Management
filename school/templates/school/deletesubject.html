@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        background-color: #FDEBD0;
+    }
+    form{
+        font-size: 20px;
+
+    }
+</style>
+<body>
+<form method="post">
+    {% csrf_token %}
+<p>Are you sure you want to delete "{{ object }}"?</p>
+<br>
+	<input type="submit" value="Confirm">
+</form>
+</body>
+</html>

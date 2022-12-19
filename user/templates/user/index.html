@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> UserList</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            background-color: #ffe6e6;
+        }
+       li{
+        font-family: "Times New Roman", Times, serif;
+        font-size: 17px;
+        color: black;
+        position: none;
+       }
+
+    </style>
+</head>
+<body>
+    <!--<h2>good evening </h2> -->
+    <fieldset>
+        <h4>- It is {% now "jS F Y H:i" %}</h4>
+        <!--It is 21st November 2022 08:54 -->
+    <h2>List of user</h2>
+    {% for u in object_list %}
+   <ul>
+        <li> <a href="/user/{{u.id}}/">{{ u.id}} </a>, {{ u.username }} </li>
+   </ul>
+    {% endfor %}
+<!--        <h1>{% comment %} hii there {% endcomment %}</h1>-->
+<!--        {% lorem %} randomly shows paragraph-->
+    </fieldset>
+</body>
+</html>

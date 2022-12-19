@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subject list</title>
+</head>
+<style>
+
+    body{
+     background-color: #FEF9E7;
+
+    }
+    a{
+    font-size : 17px;
+    color: black;
+    padding: 6px;
+    margin: 3px;
+    margin-left:7px;
+    text-decoration: none;
+    border : 2px solid black;
+    background-color:  #D5F5E3;
+
+    }
+    table{
+    font-size : 18px;
+    padding: 15px;
+    border-collapse: collapse;
+
+    }
+    td{
+    padding:3px;
+    padding-left: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 5px;
+    }
+    h4{
+    padding-left: 23px;
+    }
+    .one{
+    padding-left:27px;
+    padding-right:27px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    border-radius: 5px;
+    }
+</style>
+<body>
+  <fieldset>
+    <h2><u>List of subjects shown below</u></h2>
+      <br><br>
+      <table border ="1">
+          <tr>
+              <td>Subject Name</td>
+              <td>Faculty Name</td>
+              <td>Standards</td>
+              <td>Action</td>
+              <td>Action</td>
+          </tr>
+       {% for s1 in object_list %}
+
+            {% for t in s1.subject_teacher.all %}
+
+                {% for p in s1.standards.all %}
+                <tr>
+                    <td>{{ s1.sub_name }}</td>
+                    <td>{{ t.username }} </td>
+                    <td>{{ p.name }} </td>
+                    <td class="one"><a href="/school/subject/{{ s1.id }}/update" target="_blank">Edit</a></td>
+                    <td class="one"><a href="/school/subject/{{ s1.id }}/delete" target="_blank">Delete</a></td>
+                </tr>
+            {% endfor %}
+            {% endfor %}
+        {% endfor %}
+      </table>
+    </fieldset>
+  <br>
+<a href="/school/addsubject" target="_blank">Add Subject</a>
+</body>
+</html>

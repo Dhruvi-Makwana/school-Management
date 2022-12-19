@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+    <style>
+        body{
+            background-color: #faebf5;
+        }
+        h2{
+            text-align: center;
+        }
+        td
+        {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <h2>HIRAMNAI SCHOOL</h2>
+
+    <h3><u> User Information </u></h3>
+    <table border="1">
+
+        <tr>
+            <td>username</td>
+            <td>user_type</td>
+            <td>mobile number</td>
+            <td>email address</td>
+        </tr>
+        <tr>
+            <td> {{ object.username }} </td>
+            <td> {{ object.user_type }}</td>
+            <td> {{ object.mobile_number }} </td>
+            <td> {{ object.email }} </td>
+        </tr>
+
+    </table>
+<!--    <p>User name is <b> {{ s1.username }} </b>. User type is {{ s1.user_type }} {{ s1.first_name }}-->
+<!--        {{ s1.last_name }} {{ s1.email_address }}</p>-->
+    </fieldset>
+<!--    <script>-->
+<!--        prompt('java script run successfull')-->
+<!--    </script>-->
+</body>
+</html>

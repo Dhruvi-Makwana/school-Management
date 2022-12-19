@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Standards list</title>
+</head>
+
+<style>
+
+    body{
+     background-color: #F8EDE3;
+    }
+    a{
+    font-size : 17px;
+    color: black;
+    padding: 6px;
+    margin: 3px;
+    margin-left:7px;
+    text-decoration: none;
+    border : 2px solid black;
+    background: #E9F7EF;
+    padding-top:2px;
+    border-radius: 5px;
+
+    }
+    a:hover{
+    color: #6E2C00;
+    background-color: #D5DBDB ;
+    }
+    table{
+    font-size : 18px;
+    padding:15px;
+    border-collapse: collapse;
+    }
+    td{
+    padding:3px;
+    padding-left: 10px;
+    font-family: sans-serif;
+    text-align: center;
+    font-style: italic;
+    border-radius:5px;
+    }
+    h4{
+    padding-left: 23px;
+    }
+    .one{
+    padding-left:27px;
+    padding-right:27px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    }
+
+</style>
+<body>
+   <fieldset>
+    <h2><u>List of standards show below</u></h2>
+       <br><br>
+       <table border="1">
+           <tr>
+               <td>Standard Name</td>
+               <td>Class Teacher</td>
+               <td>Action</td>
+               <td>Action</td>
+           </tr>
+             {% for u in object_list %}
+           <tr>
+               <td> {{u.name}} </td>
+               <td>{{ u.class_teacher }}</td>
+               <td class="one"><a href= "/school/{{ u.id }}/update" target="_blank">Edit</a></td>
+<!--               <td class="one"><a href="{% url 'school:example' pk=u.id %} ">edit</a></td>-->
+               <td class="one"><a href="/school/{{ u.id }}/delete" target="_blank">Delete</a></td>
+           </tr>
+            {% endfor %}
+       </table>
+
+
+<!--       {% for u in object_list %}-->
+<!--    <ul>-->
+
+<!--    <li> {{u.name}} ,{{ u.class_teacher }}-->
+
+
+<!--    <a href="/school/{{ u.id }}/update" target="_blank">Edit</a>-->
+<!--        <a href="/school/{{ u.id }}/delete" target="_blank">Delete</a>-->
+<!--    </li>-->
+<!--    </ul>-->
+<!--       {% endfor %}-->
+    </fieldset>
+   <br>
+
+<a class = "two" href="/school/addstandard" target="_blank">Add Standards</a>
+<!--<a href="{% url 'school:example' 1 %}">click here</a>-->
+</body>
+</html>

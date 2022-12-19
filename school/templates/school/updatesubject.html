@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+     body{
+        background-color: #FEF9E7;
+    }
+    form{
+        font-size: 20px;
+    }
+
+</style>
+<body>
+<h2><u>You can update your data here...</u> </h2><br>
+    <h3>Note: You can only update subject teacher and standards </h3>
+ <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+     <input type="submit" value="Save" autofocus></form>
+</body>
+</html>
