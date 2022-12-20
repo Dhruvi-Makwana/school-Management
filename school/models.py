@@ -23,7 +23,6 @@ SUBJECT_LIST = [
     ('Social_science', 'Social_science'),
 ]
 
-
 class SchoolDetails(models.Model):
     name = models.CharField(max_length=30, help_text='info_school name')
     address = models.TextField(help_text='info_school address')
@@ -52,6 +51,6 @@ class Subject(models.Model):
         # return "{},{}".format(self.sub_name, stand)
         # return f'{self.sub_name} ,{self.standards.all()}'
         # gujrati, < QuerySet[ < Standards: 9, pooja >] >
-
+        #git working
         # standards = ", ".join(str(stan) for stan in self.standards.all())
         # return "{},{}".format(self.sub_name, standards)
